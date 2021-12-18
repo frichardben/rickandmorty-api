@@ -1,5 +1,8 @@
-import './styles/global.scss'
+import { Main } from './pages/Main'
+import './assets/styles/App.scss'
 
 export function App() {
-  return <h1>Hello ReactJS</h1>
+  return (
+    <Main />
+  )
 }

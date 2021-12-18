@@ -1,0 +1,27 @@
+.card {
+  width: 18rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+  flex: 1;
+  border-radius: 8px;
+
+  &__image {
+    height: 180px;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  &__body {
+    padding: 1.25rem;
+    background-color: white;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+}

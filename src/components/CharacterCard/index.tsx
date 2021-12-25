@@ -17,12 +17,15 @@ enum Species {
 const CharacterCard = () => {
   const [characterList, setCharacterList] = useState([])
   const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const fetchData = () => {
+    setLoading(true)
     api
       .get('character')
       .then((res) => {
         setCharacterList(res.data.results)
+        setLoading(false)
         //console.log(res.data.results)
       })
       .catch((err) => {
@@ -38,6 +41,9 @@ const CharacterCard = () => {
     <>
       {error && (
         <p>{error}</p>
+      )}
+      {loading && (
+        <p>Carregando...</p>
       )}
       {characterList.map((item: Character) => (
        <div className="card" key={item.id}>

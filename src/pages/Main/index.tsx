@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from '../../components/Card'
+import CharacterCard from '../../components/CharacterCard'
 import Search from '../../components/Search'
 
 export const Main = () => {
@@ -7,10 +7,9 @@ export const Main = () => {
     <>
       <Search />
       <main>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <section>
+          <CharacterCard />
+        </section>
       </main>
     </>
   )

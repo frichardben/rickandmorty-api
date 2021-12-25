@@ -1,6 +1,9 @@
 main {
   margin-top: 64px;
   margin-inline: 32px;
-  display: flex;
-  gap: 32px;
+
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+  }
 }

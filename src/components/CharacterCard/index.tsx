@@ -6,6 +6,13 @@ interface Character {
   id: number
   image: string
   name: string
+  species: string
+  status?: string
+  gender: string
+}
+
+type Status = {
+  status: 'Alive' | 'Dead' | 'unknown'
 }
 
 enum Species {
@@ -42,24 +49,35 @@ const CharacterCard = () => {
     <>
       {error && <p>{error}</p>}
       {loading ? (
-         <Loading />
+        <Loading />
       ) : (
         characterList.map((item: Character) => (
           <div className="card" key={item.id}>
-            <img className="card__image" src={item.image} alt={item.name} />
+            <img
+              className={`card__image ${item?.status === 'Dead' ? 'dead' : ''}`}
+              src={item.image}
+              alt={item.name}
+            />
             <div className="card__body">
               <h5 className="card__title">{item.name}</h5>
               <p className="card__text">
                 <span>Species</span>
-                Human
+                {item.species}
               </p>
+              
               <p className="card__text">
-                <span>Origin</span>
-                Terra
+                <span>Gender</span>
+                {item.gender}
               </p>
-              <a href="#" className="btn btn-primary">
+
+              <p className="card__text">
+                <span>Status</span>
+                {item.status}
+              </p>
+
+              {/* <a href="#" className="btn btn-primary">
                 Go somewhere
-              </a>
+              </a> */}
             </div>
           </div>
         ))

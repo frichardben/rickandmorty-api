@@ -1,0 +1,26 @@
+$card-padding: 24px;
+$card-height: 340px;
+$card-skeleton: linear-gradient(lightgrey $card-height, transparent 0);
+
+$avatar-size: 120px;
+$avatar-position: $card-padding $card-padding;
+$avatar-skeleton: radial-gradient(circle 60px at center, white 99%, transparent 0
+  );
+
+$title-height: 32px;
+$title-width: 200px;
+$title-position: $card-padding 180px;
+$title-skeleton: linear-gradient(white $title-height, transparent 0);
+
+$desc-line-height: 16px;
+$desc-line-skeleton: linear-gradient(white $desc-line-height, transparent 0);
+$desc-line-1-width:230px;
+$desc-line-1-position: $card-padding 242px;
+$desc-line-2-width:180px;
+$desc-line-2-position: $card-padding 265px;
+
+$footer-height: 40px;
+$footer-position: 0 calc($card-height - $footer-height);
+$footer-skeleton: linear-gradient(white $footer-height, transparent 0);
+$blur-width: 200px;
+$blur-size: $blur-width calc($card-height - $footer-height);

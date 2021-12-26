@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { api } from '../../services'
+import { Loading } from '../Loading'
 
 interface Character {
   id: number
@@ -39,31 +40,30 @@ const CharacterCard = () => {
 
   return (
     <>
-      {error && (
-        <p>{error}</p>
+      {error && <p>{error}</p>}
+      {loading ? (
+         <Loading />
+      ) : (
+        characterList.map((item: Character) => (
+          <div className="card" key={item.id}>
+            <img className="card__image" src={item.image} alt={item.name} />
+            <div className="card__body">
+              <h5 className="card__title">{item.name}</h5>
+              <p className="card__text">
+                <span>Species</span>
+                Human
+              </p>
+              <p className="card__text">
+                <span>Origin</span>
+                Terra
+              </p>
+              <a href="#" className="btn btn-primary">
+                Go somewhere
+              </a>
+            </div>
+          </div>
+        ))
       )}
-      {loading && (
-        <p>Carregando...</p>
-      )}
-      {characterList.map((item: Character) => (
-       <div className="card" key={item.id}>
-         <img className='card__image' src={item.image} alt={item.name} />
-       <div className="card__body">
-         <h5 className="card__title">{item.name}</h5>
-         <p className="card__text">
-           <span>Species</span>
-           Human
-         </p>
-         <p className="card__text">
-           <span>Origin</span>
-           Terra
-         </p>
-         <a href="#" className="btn btn-primary">
-           Go somewhere
-         </a>
-       </div>
-     </div>
-      ))}
     </>
   )
 }

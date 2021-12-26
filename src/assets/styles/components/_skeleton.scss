@@ -1,0 +1,68 @@
+@use '../abstracts/variables';
+
+.skeleton {
+  width: 280px;
+  height: variables.$card-height;
+  margin-bottom: 16px;
+
+  &:empty::after {
+    content:"";
+    display:block;
+    width: 100%;
+    height: 100%;
+    border-radius:6px;
+    box-shadow: 0 10px 45px rgba(0,0,0, .1);
+
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(lightgrey, 0) 0,
+        rgba(lightgrey, .8) 50%,
+        rgba(lightgrey, 0) 100%
+      ),                          //animation blur
+      variables.$title-skeleton,      //title
+      variables.$desc-line-skeleton,  //desc1
+      variables.$desc-line-skeleton,  //desc2
+      variables.$avatar-skeleton,     //avatar
+      variables.$footer-skeleton,     //footer bar
+      variables.$card-skeleton        //card
+    ;
+
+    background-size:
+      variables.$blur-size,
+      variables.$title-width variables.$title-height,
+      variables.$desc-line-1-width variables.$desc-line-height,
+      variables.$desc-line-2-width variables.$desc-line-height,
+      variables.$avatar-size variables.$avatar-size,
+      100% variables.$footer-height,
+      100% 100%
+    ;
+
+    background-position:
+      -150% 0,                      //animation
+      variables.$title-position,        //title
+      variables.$desc-line-1-position,  //desc1
+      variables.$desc-line-2-position,  //desc2
+      variables.$avatar-position,       //avatar
+      variables.$footer-position,       //footer bar
+      0 0                           //card
+    ;
+
+    background-repeat: no-repeat;
+    animation: loading 1.5s infinite;
+  }
+}
+
+@keyframes loading {
+  to {
+    background-position:
+      350% 0,
+      variables.$title-position,
+      variables.$desc-line-1-position,
+      variables.$desc-line-2-position,
+      variables.$avatar-position,
+      variables.$footer-position,
+      0 0
+    ;
+  }
+}

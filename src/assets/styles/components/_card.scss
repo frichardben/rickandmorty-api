@@ -43,12 +43,14 @@
     position: relative;
     padding-block: 16px;
 
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      border-bottom: 1px solid gray;
-      width: 100%;
+    &:not(:last-child) {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        border-bottom: 1px solid gray;
+        width: 100%;
+      }
     }
   }
 }

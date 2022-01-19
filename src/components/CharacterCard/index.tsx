@@ -1,29 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { api } from '../../services'
+import { Character } from '../../types'
 import { Loading } from '../Loading'
 
-interface Character {
-  id: number
-  image: string
-  name: string
-  species: string
-  status?: string
-  gender: string
-}
 
-type Status = {
-  status: 'Alive' | 'Dead' | 'unknown'
-}
-
-enum Species {
-  Alie = 'Alien',
-  Human = 'Human',
-  Unknown = 'Unknown',
-  Poopybutthole = 'Poopybutthole'
-}
 
 const CharacterCard = () => {
-  const [characterList, setCharacterList] = useState([])
+  const [characterList, setCharacterList] = useState<Character[]>([])
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
@@ -51,7 +34,7 @@ const CharacterCard = () => {
       {loading ? (
         <Loading />
       ) : (
-        characterList.map((item: Character) => (
+        characterList.map((item) => (
           <div className="card" key={item.id}>
             <img
               className={`card__image ${item?.status === 'Dead' ? 'dead' : ''}`}
@@ -64,7 +47,7 @@ const CharacterCard = () => {
                 <span>Species</span>
                 {item.species}
               </p>
-              
+
               <p className="card__text">
                 <span>Gender</span>
                 {item.gender}

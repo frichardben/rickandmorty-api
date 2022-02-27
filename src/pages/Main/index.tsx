@@ -1,6 +1,12 @@
-import React from 'react'
-import CharacterCard from '../../components/CharacterCard'
+import React, { lazy, Suspense } from 'react'
+
 import Search from '../../components/Search'
+import { Loading } from '../../components/Loading'
+
+export const CharacterCard = lazy(
+  () => import('../../components/CharacterCard')
+)
+const renderLoader = () => <Loading />
 
 export const Main = () => {
   return (
@@ -8,7 +14,9 @@ export const Main = () => {
       <Search />
       <main>
         <section>
-          <CharacterCard />
+          <Suspense fallback={renderLoader()}>
+            <CharacterCard />
+          </Suspense>
         </section>
       </main>
     </>

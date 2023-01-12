@@ -24,3 +24,12 @@ $footer-position: 0 calc($card-height - $footer-height);
 $footer-skeleton: linear-gradient(white $footer-height, transparent 0);
 $blur-width: 200px;
 $blur-size: $blur-width calc($card-height - $footer-height);
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+// Tablets and small desktops
+$screen-lg-min: 992px;
+// Large tablets and desktops
+$screen-xl-min: 1200px;

@@ -1,6 +1,4 @@
-import { api } from "../../../core/api";
-
-
+import { api } from "@core/api";
 
 export class CharacterService {
   static getAllCharacter() {

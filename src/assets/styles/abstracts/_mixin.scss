@@ -1,0 +1,20 @@
+@use '../abstracts/variables';
+
+$breakpoints:(
+  'small': variables.$screen-sm-min,
+  'medium': variables.$screen-md-min,
+  'large': variables.$screen-lg-min,
+  'xlarge':  variables.$screen-xl-min
+)!default;
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $value: map-get($breakpoints, $breakpoint);
+
+    @media screen and (min-width: $value) {
+      @content;
+    }
+  }
+
+  @warn "Unknown `#{$breakpoint}` in $breakpoints";
+}

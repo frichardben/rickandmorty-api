@@ -1,9 +1,23 @@
+@use '../abstracts/mixin' as m;
+
 main {
   margin-top: 64px;
   margin-inline: 32px;
 
   section {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 1rem;
+    justify-content: center;
+
+    @include m.respond-to('small') {
+      grid-template-columns: 1fr auto;
+    }
+
+    @include m.respond-to('large') {
+      grid-template-columns: 1fr 1fr auto;
+    }
+    @include m.respond-to('xlarge') {
+      grid-template-columns: 1fr 1fr 1fr auto;
+    }
   }
 }

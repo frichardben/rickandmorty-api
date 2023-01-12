@@ -1,6 +1,6 @@
-import { Main } from './pages/Main'
+import { Main } from '@module/CharacterList/pages/Main'
 import './assets/styles/App.scss'
-import { DefaultErrorBoundary } from './components/ErrorBoundary'
+import { DefaultErrorBoundary } from '@shared/components/ErrorBoundary'
 
 export function App() {
   return (

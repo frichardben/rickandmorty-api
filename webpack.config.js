@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const { Module } = require('module')
 
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
@@ -14,7 +15,12 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    alias: {
+      '@module': path.resolve(__dirname, './src/module'),
+      '@shared': path.resolve(__dirname, './src/shared'),
+      '@core': path.resolve(__dirname, './src/core'),
+    },
   },
   devServer: {
     static: path.resolve(__dirname, 'public'),
@@ -50,5 +56,5 @@ module.exports = {
         use: { loader: 'file-loader' }
       }
     ]
-  }
+  },
 }

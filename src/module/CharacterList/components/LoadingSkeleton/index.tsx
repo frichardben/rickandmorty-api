@@ -1,6 +1,4 @@
-import React from 'react'
-
-export const Loading = () => {
+export const LoadingSkeleton = () => {
   const numbers = Object.keys(new Array(20).fill(null))
 
   return (

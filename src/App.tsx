@@ -1,8 +1,12 @@
 import { Main } from './pages/Main'
 import './assets/styles/App.scss'
+import { DefaultErrorBoundary } from './components/ErrorBoundary'
 
 export function App() {
   return (
-    <Main />
+    <DefaultErrorBoundary>
+      <Main />
+    </DefaultErrorBoundary>
+
   )
 }

@@ -1,11 +1,18 @@
+@use '../abstracts/mixin' as m;
 .search {
   height: 64rem;
   width: 500px;
 
+  @include m.respond-to('small') {
+    margin-inline: 1rem;
+  }
+
   label {
     position: relative;
     font-size: 1.3rem;
-    display: block;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 
   &__title {

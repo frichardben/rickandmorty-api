@@ -1,9 +1,9 @@
 import React, { lazy, Suspense, useEffect, useState } from 'react'
 
-import Search from '@module/CharacterList/components/Search'
-import { LoadingSkeleton } from '@module/CharacterList/components/LoadingSkeleton'
+import Search from '@module/character-list/components/Search'
+import { LoadingSkeleton } from '@module/character-list/components/LoadingSkeleton'
 import { Character } from '@shared/types'
-import { CharacterService } from '@module/CharacterList/services'
+import { CharacterService } from '@module/character-list/services'
 
 
 export const CharacterCard = lazy(

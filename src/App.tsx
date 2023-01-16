@@ -1,4 +1,4 @@
-import { Main } from '@module/CharacterList/pages/Main'
+import { Main } from '@module/character-list/pages/Main'
 import './assets/styles/App.scss'
 import { DefaultErrorBoundary } from '@shared/components/ErrorBoundary'
 

@@ -1,6 +1,12 @@
 import React from 'react'
 
-const Search = (): JSX.Element => {
+interface ISearchProps {
+  Onsearch: (e: string) => void
+  search: string
+}
+
+const Search = ({ Onsearch, search }: ISearchProps): JSX.Element => {
+
   return (
     <header className="header">
       <form className="search" aria-labelledby="search">
@@ -12,6 +18,8 @@ const Search = (): JSX.Element => {
             placeholder="Search by characteres"
             aria-label="Search"
             aria-describedby="search-addon"
+            onChange={e => Onsearch(e.target.value) }
+            value={search}
           />
         </label>
       </form>
